@@ -1,259 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cookie Crumble</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Cookie Crumble</title>
 
-  <style>
-  body {
+<style>
+body {
   margin: 0;
   font-family: 'Poppins', Arial, sans-serif;
   color: #4b2a2a;
 
-  background-image: 
+  background-image:
     url("raspberry.png"),
     url("lemon.png"),
     linear-gradient(180deg, #fffdf7, #ffeef3);
 
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: left top, right bottom, center;
-  background-size: 300px, 300px, cover;
+  background-size: 250px, 250px, cover;
 }
 
-  header {
+/* HEADER */
+header {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   color: white;
 
   background-image:
-    linear-gradient(135deg, rgba(255,79,122,0.85), rgba(255,216,77,0.85)),
+    linear-gradient(135deg, rgba(255,79,122,0.75), rgba(255,216,77,0.75), rgba(196,122,58,0.35)),
     url("cookie1.png");
 
   background-size: cover;
   background-position: center;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
 
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
   position: relative;
   overflow: hidden;
 }
 
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+h1 {
+  margin: 0;
+  font-size: 48px;
+}
 
-  /* COOKIE BUBBLES EFFECT */
-  header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 15% 25%, rgba(255,255,255,0.25) 25px, transparent 26px),
-      radial-gradient(circle at 80% 30%, rgba(255,255,255,0.20) 18px, transparent 19px),
-      radial-gradient(circle at 60% 75%, rgba(255,255,255,0.18) 22px, transparent 23px);
-    opacity: 0.5;
-  }
+.slogan {
+  font-style: italic;
+  font-size: 20px;
+  margin-top: 8px;
+}
 
-  h1 {
-    margin: 0;
-    font-size: 50px;
-    letter-spacing: 1px;
-  }
+.tagline {
+  font-size: 16px;
+  opacity: 0.9;
+}
 
-  .slogan {
-    font-style: italic;
-    font-size: 20px;
-    margin-top: 10px;
-  }
+/* NAVIGATION */
+nav {
+  margin-top: 20px;
+}
 
-  .tagline {
-    font-size: 16px;
-    opacity: 0.95;
-  }
+nav a {
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-  nav {
-    margin-top: 25px;
-  }
+nav a:hover {
+  background: white;
+  color: #ff4f7a;
+}
 
-  nav a {
-    text-decoration: none;
-    margin: 0 8px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    background: rgba(255,255,255,0.25);
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-  }
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
 
-  nav a:hover {
-    background: white;
-    color: #ff4f7a;
-  }
+.card {
+  max-width: 850px;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
 
-  /* SECTIONS */
-  section {
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
-  }
+h2 {
+  margin-top: 0;
+  color: #ff4f7a;
+}
 
-  .card {
-    max-width: 850px;
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-  }
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  border-radius: 35px;
+  background: linear-gradient(135deg, #ff4f7a, #ffd84d);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-  h2 {
-    margin-top: 0;
-    color: #ff4f7a;
-  }
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffd84d, #ff4f7a);
+}
 
-  /* BUTTON */
-  .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    border-radius: 35px;
-    background: linear-gradient(135deg, #ff4f7a, #ffd84d);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
+/* MENU */
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
 
-  .btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #ffd84d, #ff4f7a);
-  }
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  border-bottom: 1px dashed #ffd1dc;
+  padding-bottom: 12px;
+}
 
-  /* MENU */
-  .menu-list {
-    list-style: none;
-    padding: 0;
-  }
+.menu-desc {
+  font-size: 14px;
+  opacity: 0.85;
+}
 
-  .menu-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 22px;
-    border-bottom: 1px dashed #ffd1dc;
-    padding-bottom: 12px;
-  }
+.price {
+  font-weight: bold;
+  color: #c47a3a;
+}
 
-  .menu-desc {
-    font-size: 14px;
-    opacity: 0.85;
-  }
-
-  .price {
-    font-weight: bold;
-    color: #c47a3a; /* caramel tone */
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, #5a2c1f, #ff4f7a);
-    color: white;
-    margin-top: 40px;
-  }
-  </style>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #5a2c1f, #ff4f7a);
+  color: white;
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>My Cookie Crumble</h1>
-    <p class="slogan">Feels Like a Hug 🍪</p>
-    <p class="tagline">Warm cookies. Fresh from the oven. Straight to your door.</p>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Order</a>
-    </nav>
-  </header>
+<header>
+  <h1>My Cookie Crumble</h1>
+  <p class="slogan">Feels Like a Hug 🍪</p>
+  <p class="tagline">Warm cookies. Fresh from the oven. Straight to your door.</p>
 
-  <section id="home">
-    <div class="card">
-      <h2>Welcome to your sweet moment ✨</h2>
-      <p>We bake small batches daily — soft inside, golden outside, and packed with comfort.</p>
-      <p><strong>Delivery only (for now)</strong> — so you can enjoy the cozy without leaving home.</p>
-      <a class="btn" href="#contact">Order on WhatsApp</a>
-    </div>
-  </section>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Order</a>
+  </nav>
+</header>
 
-  <section id="menu">
-    <div class="card">
-      <h2>Pick Your Crumble 🍋🍓</h2>
-      <p>Fresh, fruity, and cozy — the kind of cookies that make your day instantly better.</p>
+<section id="home">
+  <div class="card">
+    <h2>Welcome to your sweet moment ✨</h2>
+    <p>We bake small batches daily — soft inside, golden outside, and packed with comfort.</p>
+    <p><strong>Delivery only (for now)</strong> — so you can enjoy the cozy without leaving home.</p>
+    <a class="btn" href="#contact">Order on WhatsApp</a>
+  </div>
+</section>
 
-      <ul class="menu-list">
-        <li class="menu-item">
-          <div>
-            <strong>Raspberry Lemon Glow</strong>
-            <div class="menu-desc">Bright lemon + sweet raspberry swirl, soft and buttery.</div>
-          </div>
-          <div class="price">$4.00</div>
-        </li>
+<section id="menu">
+  <div class="card">
 
-        <li class="menu-item">
-          <div>
-            <strong>Classic Chocolate Chip</strong>
-            <div class="menu-desc">Golden edges, gooey center, melty chocolate in every bite.</div>
-          </div>
-          <div class="price">$3.50</div>
-        </li>
-
-        <li class="menu-item">
-          <div>
-            <strong>Double Choco Crave</strong>
-            <div class="menu-desc">Rich cocoa cookie with extra chocolate chunks. Big comfort energy.</div>
-          </div>
-          <div class="price">$4.50</div>
-        </li>
-
-        <li class="menu-item">
-          <div>
-            <strong>Box of 6</strong>
-            <div class="menu-desc">Perfect for sharing… or not 😄</div>
-          </div>
-          <div class="price">$18</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="card">
-      <h2>About us</h2>
-      <p>My Cookie Crumble is all about one thing: <strong>turning ordinary days into cozy ones.</strong></p>
-      <p>We keep it simple — quality ingredients, warm flavors, and that “one more bite” feeling.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="card">
-      <h2>Let’s bake your order 🔥</h2>
-      <p>Message us on WhatsApp and tell us what you’re craving. We’ll handle the magic.</p>
-
-      <!-- Replace 212600000000 with your real WhatsApp number (country code + number, no +, no spaces) -->
-      <a class="btn" href="https://wa.me/212600000000" target="_blank">Order on WhatsApp</a>
-
-      <p style="margin-top:12px; font-size:14px; opacity:0.85;">
-        Tip: Add delivery area + delivery hours here when you’re ready.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    Baked with love — always. 🍪✨
-  </footer>
-</body>
-</html>
