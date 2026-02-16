@@ -31,7 +31,7 @@
       overflow-x:hidden;
     }
 
-    /* SOFT INGREDIENT BACKGROUND (works if paths are correct) */
+    /* SOFT INGREDIENT BACKGROUND (paths fixed for your repo) */
     body::before{
       content:"";
       position:fixed;
@@ -40,11 +40,11 @@
       z-index:0;
 
       background-image:
-        url("assets/raspberries.jpg"),
-        url("assets/lemon.jpg"),
-        url("assets/chocolate.jpg"),
-        url("assets/chips.png"),
-        url("assets/blueberries.jpg");
+        url("raspberries.jpg"),
+        url("lemon.jpg"),
+        url("chocolate.jpg"),
+        url("chips.png"),
+        url("blueberries.jpg");
 
       background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
@@ -66,13 +66,13 @@
       filter: blur(0.2px);
     }
 
-    /* If you didn't upload blueberries, remove it gracefully */
+    /* If you didn't upload blueberries.jpg, remove it gracefully */
     body.no-blueberries::before{
       background-image:
-        url("assets/raspberries.jpg"),
-        url("assets/lemon.jpg"),
-        url("assets/chocolate.jpg"),
-        url("assets/chips.png");
+        url("raspberries.jpg"),
+        url("lemon.jpg"),
+        url("chocolate.jpg"),
+        url("chips.png");
     }
 
     /* MAIN WRAP so content stays above background */
@@ -268,7 +268,7 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <img src="assets/logo.jpg" alt="My Cookie Crumble logo">
+        <img src="logo.jpg" alt="My Cookie Crumble logo">
         <h1>My Cookie Crumble</h1>
       </div>
 
@@ -361,12 +361,11 @@
   </div>
 
   <script>
-    // If you didn't upload blueberries.jpg, auto-disable it so nothing breaks.
+    // If blueberries.jpg doesn't exist, auto-disable it so nothing breaks.
     (function () {
       const test = new Image();
-      test.onload = () => {};
       test.onerror = () => document.body.classList.add("no-blueberries");
-      test.src = "assets/blueberries.jpg";
+      test.src = "blueberries.jpg";
     })();
   </script>
 </body>
