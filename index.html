@@ -9,214 +9,157 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --pink:#ff4f8b;
-  --pinkSoft:#ffd6e5;
-  --lemon:#ffe66d;
-  --blue:#7da9ff;
-  --jam:#ffb38a;
-  --ink:#222;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Poppins', sans-serif;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
 body{
-  font-family:'Poppins',sans-serif;
-  color:var(--ink);
-  background:#fff7fb;
+  background-image:url("assetsbackground.jpg"); /* YOUR BACKGROUND */
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#222;
 }
 
-/* ===== HEADER ===== */
+/* SOFT WHITE OVERLAY */
+.overlay{
+  background:rgba(255,255,255,0.88);
+  min-height:100vh;
+}
+
+/* HEADER */
 header{
-  background:#ffd6e5;
-  padding:25px 30px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  padding:25px 50px;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
   gap:15px;
 }
 
-.brand img{
-  width:90px;   /* BIG LOGO */
+.logo img{
+  width:90px; /* BIGGER LOGO */
   height:90px;
   border-radius:50%;
-  object-fit:cover;
   background:white;
+  padding:5px;
 }
 
-.brand h1{
-  font-size:32px;
+.logo h1{
+  font-size:34px;
   font-weight:800;
 }
 
 .order-btn{
   background:black;
   color:white;
-  padding:12px 24px;
+  padding:14px 28px;
   border-radius:30px;
   text-decoration:none;
   font-weight:600;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-  padding:60px 40px;
-  background-image:url("assets/background.jpg"); /* YOUR BIG INGREDIENT PHOTO */
-  background-size:cover;
-  background-position:center;
-  position:relative;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,0.75); /* SOFT WHITE OVERLAY */
-}
-
-.hero-content{
-  position:relative;
-  max-width:900px;
+  padding:80px 60px;
 }
 
 .hero h2{
-  font-size:64px;
+  font-size:72px;
   font-weight:800;
+  margin-bottom:20px;
 }
 
 .hero p{
-  margin-top:15px;
-  font-size:18px;
-  opacity:0.85;
-  line-height:1.5;
+  font-size:20px;
+  max-width:600px;
+  line-height:1.6;
 }
 
-/* ===== PILLS ===== */
-.ingredients{
+/* TAGS */
+.tags{
   margin-top:25px;
   display:flex;
   gap:12px;
-  flex-wrap:wrap;
 }
 
-.pill{
+.tag{
   padding:10px 18px;
-  border-radius:25px;
-  font-weight:600;
-  border:2px solid transparent;
-}
-
-.lemon{background:#fff7c2;border-color:#ffe66d;}
-.raspberry{background:#ffd6e5;border-color:#ff4f8b;}
-.blueberry{background:#dbe4ff;border-color:#7da9ff;}
-.chips{background:#ffe4cc;border-color:#c47a3a;}
-.jam{background:#ffe8d6;border-color:#ffb38a;}
-
-/* ===== NAV PILLS ===== */
-.nav-pills{
-  margin-top:25px;
-  display:flex;
-  gap:10px;
-}
-
-.nav-pills a{
-  background:white;
-  padding:10px 20px;
   border-radius:20px;
+  font-weight:600;
+  background:white;
+  border:2px solid #eee;
+}
+
+.lemon{border-color:#ffd84d;}
+.raspberry{border-color:#ff5a8a;}
+.blueberry{border-color:#6f8cff;}
+.choco{border-color:#5a3a2e;}
+.jam{border-color:#ff8b8b;}
+
+/* NAV BUTTONS */
+.nav-buttons{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+}
+
+.nav-buttons a{
   text-decoration:none;
+  background:#eee;
+  padding:12px 22px;
+  border-radius:25px;
   color:black;
   font-weight:600;
-  box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ===== SECTION ===== */
-.section{
-  padding:60px 40px;
-}
-
-.card{
-  background:white;
-  padding:35px;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  max-width:900px;
-  margin:auto;
-}
-
-.section h3{
-  font-size:36px;
-  color:var(--pink);
-  margin-bottom:15px;
-}
-
-/* ===== FOOTER ===== */
 footer{
-  background:#ff4f8b;
-  color:white;
   text-align:center;
   padding:30px;
-  margin-top:40px;
-}
-
-@media(max-width:600px){
-  .hero h2{font-size:40px;}
-  .brand img{width:70px;height:70px;}
+  font-weight:600;
 }
 </style>
 </head>
 
 <body>
+<div class="overlay">
 
 <header>
-  <div class="brand">
-    <img src="assets/logo.jpg">
+  <div class="logo">
+    <img src="assetslogo.jpg" alt="logo"> <!-- YOUR LOGO -->
     <h1>My Cookie Crumble</h1>
   </div>
 
-  <a class="order-btn" href="#contact">Order Now</a>
+  <a class="order-btn" href="#">Order Now</a>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h2>Classic Flavors</h2>
-    <p>
-      Warm, cozy cookies made for lemon lovers, berry fans,
-      and chocolate cravings. Fresh ingredients. Big comfort energy.
-    </p>
+  <h2>Classic Flavors</h2>
+  <p>
+    Warm, cozy cookies made for lemon lovers, berry fans, chocolate cravings,
+    and sweet jam fillings. Fresh ingredients. Big comfort energy.
+  </p>
 
-    <div class="ingredients">
-      <span class="pill lemon">Lemon 🍋</span>
-      <span class="pill raspberry">Raspberry 🍓</span>
-      <span class="pill blueberry">Blueberry 🫐</span>
-      <span class="pill chips">Choco Chips 🍪</span>
-      <span class="pill jam">Jams 🍯</span>
-    </div>
-
-    <div class="nav-pills">
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Order</a>
-    </div>
+  <div class="tags">
+    <span class="tag lemon">Lemon 🍋</span>
+    <span class="tag raspberry">Raspberry 🍓</span>
+    <span class="tag blueberry">Blueberry 🫐</span>
+    <span class="tag choco">Chocolate 🍫</span>
+    <span class="tag jam">Jam 🍯</span>
   </div>
-</section>
 
-<section class="section" id="menu">
-  <div class="card">
-    <h3>Pick Your Crumble</h3>
-    <p>Fresh, fruity, and cozy — cookies that brighten your day instantly.</p>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <div class="card">
-    <h3>Order Now</h3>
-    <p>Message us on WhatsApp and we’ll bake the magic ✨</p>
-    <a class="order-btn" href="https://wa.me/212600000000">Order on WhatsApp</a>
+  <div class="nav-buttons">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Order</a>
   </div>
 </section>
 
@@ -224,7 +167,9 @@ footer{
   Baked with love 🍪✨
 </footer>
 
+</div>
 </body>
 </html>
+
 
 
