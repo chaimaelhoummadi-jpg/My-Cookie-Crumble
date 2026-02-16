@@ -36,76 +36,18 @@
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
-      margin:0;
-      font-family: "Rubik", system-ui, Arial, sans-serif;
-      color:var(--ink);
-      background:#ffffff;
-      overflow-x:hidden;
-    }
-
-    /* Ingredient background layer */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:0;
-
-      background-image:
-        url("raspberries.jpg"),
-        url("lemon.jpg"),
-        url("blueberries.jpg"),
-        url("chips.png"),
-        url("chocolate.jpg");
-
-      background-repeat:no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-
-      background-position:
-        left -40px top 140px,
-        right -50px top 170px,
-        right -60px bottom 160px,
-        left -60px bottom 80px,
-        right 40px center;
-
-      background-size:
-        320px,
-        320px,
-        340px,
-        260px,
-        360px;
-
-      opacity:0.10;              /* subtle like Crumbl */
-      filter: saturate(1.05);
-    }
-
-    .wrap{ position:relative; z-index:1; }
-
-    /* TOP BAR (Crumbl vibe) */
-    header{
-      background: var(--bar);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      position:sticky;
-      top:0;
-      z-index:5;
-    }
-
-    .topbar{
-      max-width:1100px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 16px;
-      gap:12px;
-    }
-
-    .left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:110px;
-    }
-
+  margin:0;
+  font-family: "Rubik", Arial, sans-serif;
+  color:#111;
+  background: 
+    linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+    url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x:hidden;
+}
+   
     .burger{
       width:44px;
       height:44px;
