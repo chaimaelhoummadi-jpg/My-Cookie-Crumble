@@ -6,7 +6,165 @@
   <title>My Cookie Crumble</title>
 
   <style>
-   
+   :root {
+  --raspberry: #B1125A;
+  --raspberry-soft: #FAD4E6;
+
+  --lemon: #FFD84D;
+  --lemon-soft: #FFF6C9;
+
+  --choco: #4B2E1F;
+  --cream: #FFF8F0;
+}
+
+/* General */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--lemon-soft), var(--cream));
+  color: var(--choco);
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, var(--raspberry), var(--lemon));
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.slogan {
+  font-size: 22px;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin: 8px 0;
+}
+
+.tagline {
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+/* Navigation */
+nav {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--raspberry-soft);
+  color: var(--raspberry);
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.75);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+.btn {
+  background: var(--raspberry);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #8F0E48;
+  transform: translateY(-2px);
+}
+
+/* MENU: Raspberry + Lemon theme */
+#menu .card {
+  background: linear-gradient(135deg, var(--lemon-soft), var(--raspberry-soft));
+  border: 2px solid rgba(177,18,90,0.15);
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.menu-item {
+  background: rgba(255,255,255,0.7);
+  border-radius: 14px;
+  padding: 14px;
+  border-left: 7px solid var(--lemon);
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.menu-item strong {
+  color: var(--raspberry);
+}
+
+.menu-desc {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.price {
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+/* Footer */
+footer {
+  background: var(--raspberry);
+  color: var(--lemon-soft);
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  header h1 { font-size: 32px; }
+  .menu-item { flex-direction: column; }
+  .price { align-self: flex-end; }
+}
   </style>
 </head>
 
