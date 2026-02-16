@@ -15,13 +15,13 @@
       --lemon:#ffd84d;
       --caramel:#c47a3a;
       --choco:#3a1f17;
-      --card:#ffffff;
       --shadow: 0 14px 40px rgba(0,0,0,0.10);
       --radius: 26px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: Arial, sans-serif;
@@ -31,7 +31,7 @@
       overflow-x:hidden;
     }
 
-    /* SOFT INGREDIENT BACKGROUND (paths fixed for your repo) */
+    /* INGREDIENT BACKGROUND (FILES ARE IN ROOT) */
     body::before{
       content:"";
       position:fixed;
@@ -66,7 +66,7 @@
       filter: blur(0.2px);
     }
 
-    /* If you didn't upload blueberries.jpg, remove it gracefully */
+    /* If blueberries.jpg is missing, remove it automatically */
     body.no-blueberries::before{
       background-image:
         url("raspberries.jpg"),
@@ -75,10 +75,8 @@
         url("chips.png");
     }
 
-    /* MAIN WRAP so content stays above background */
     .wrap{ position:relative; z-index:1; }
 
-    /* HEADER */
     header{
       text-align:center;
       padding: 42px 18px 34px;
@@ -178,7 +176,6 @@
       transform: translateY(-1px);
     }
 
-    /* SECTIONS */
     section{
       padding: 60px 18px;
       display:flex;
@@ -206,7 +203,6 @@
       line-height:1.6;
     }
 
-    /* BUTTON */
     .btn{
       display:inline-block;
       margin-top: 18px;
@@ -224,7 +220,6 @@
       filter: saturate(1.05);
     }
 
-    /* MENU */
     .menu-list{ list-style:none; padding:0; margin:18px 0 0; }
     .menu-item{
       display:flex;
@@ -253,7 +248,6 @@
       margin-top: 30px;
     }
 
-    /* Small screens */
     @media (max-width:520px){
       h1{ font-size:34px; }
       .brand img{ width:48px; height:48px; }
@@ -346,7 +340,6 @@
         <h2>Let’s bake your order 🔥</h2>
         <p class="lead">Message us on WhatsApp and tell us what you’re craving. We’ll handle the magic.</p>
 
-        <!-- Replace with your WhatsApp number (country code + number, no +, no spaces) -->
         <a class="btn" href="https://wa.me/212600000000" target="_blank" rel="noopener">Order on WhatsApp</a>
 
         <p style="margin-top:12px; font-size:14px; opacity:0.85;">
@@ -361,7 +354,7 @@
   </div>
 
   <script>
-    // If blueberries.jpg doesn't exist, auto-disable it so nothing breaks.
+    // If blueberries.jpg doesn't exist, remove it from the background list
     (function () {
       const test = new Image();
       test.onerror = () => document.body.classList.add("no-blueberries");
@@ -370,5 +363,4 @@
   </script>
 </body>
 </html>
-
 
